@@ -11,7 +11,7 @@
 <body>
 
 	<div id="container">
-		<div id="login" class="inline-b">
+		<div id="login">
 <?php 
 	if (isset($_SESSION['login_errors']))
 	{
@@ -35,7 +35,7 @@
 				<input type="submit" value="Login">
 			</form>
 		</div>
-		<div id="registration" class="inline-b">
+		<div id="registration">
 <?php 	
 	if (isset($_SESSION['registration_errors']))
 	{
