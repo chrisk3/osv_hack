@@ -45,6 +45,11 @@
 			unset($_SESSION['registration_errors']);
 		}
 	}
+	else if (isset($_SESSION['success_message']))
+	{
+		echo $_SESSION['success_message'];
+		unset($_SESSION['success_message']);
+	}
 ?>
 			<form action="process.php" method="post">
 				<input type="hidden" name="action" value="register">
