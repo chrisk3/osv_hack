@@ -10,11 +10,21 @@
 	<title>Edit</title>
 	<link rel="stylesheet" type="text/css" href="css/cssreset.css">
 	<link rel="stylesheet" type="text/css" href="css/edit.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src='js/edit.js'></script>
 </head>
 <body>
 	<section>
 		<div id='slide'>
 			<h1><?= $slide["title"] ?></h1>
+			<ul>
+				<li class='listitem' id='first' data-slideid=<?= $slide['id'] ?>><?= $slide['first'] ?></li>
+				<li class='listitem' id='second' data-slideid=<?= $slide['id'] ?>><?= $slide['second'] ?></li>
+				<li class='listitem' id='third' data-slideid=<?= $slide['id'] ?>><?= $slide['third'] ?></li>
+				<li class='listitem' id='fourth' data-slideid=<?= $slide['id'] ?>><?= $slide['fourth'] ?></li>
+				<li class='listitem' id='fifth' data-slideid=<?= $slide['id'] ?>><?= $slide['fifth'] ?></li>
+				<li class='listitem' id='sixth' data-slideid=<?= $slide['id'] ?>><?= $slide['sixth'] ?></li>
+			</ul>
 		</div>
 	</section>
 </body>
