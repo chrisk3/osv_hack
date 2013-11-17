@@ -13,16 +13,19 @@
 	{
 		$errors = NULL;
 
+		// Email validation
 		if (empty($_POST['email']))
 			$errors[] = "Please enter your email";
 		else if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == FALSE)
 			$errors[] = "Invalid email format, please re-enter";
 
+		// Password validation
 		if (empty($_POST['login_password']))
 			$errors[] = "Please enter your password";
 		else if (strlen(($_POST['login_password'])) < 6)
 			$errors[] = "Password must be at least 6 characters";
 
+		// If there are errors, pass them to login.php
 		if (count($errors) > 0)
 		{
 			$_SESSION['login_errors'] = $errors;
@@ -63,7 +66,7 @@
 		else if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == FALSE)
 			$errors[] = "Invalid email format, please re-enter";
 
-		// First name validation
+		// Name validation
 		if (empty($_POST['name']))
 			$errors[] = "Please enter your first name";
 		else if (is_numeric($_POST['name']))
