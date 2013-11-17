@@ -1,6 +1,5 @@
 body {
 	width: 1100px;
-	border: 1px solid black;
 	margin: auto;
 }
 
@@ -32,4 +31,9 @@ body {
 	#slide #titlebutton {
 		width: 50px;
 		margin-left: 375px;
+	}
+
+	#uploadpic img {
+		width: 200px;
+		height: 130px;
 	}
