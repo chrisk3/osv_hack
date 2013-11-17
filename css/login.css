@@ -4,6 +4,10 @@
 	width: 300px;
 }
 
+.error {
+	color: red;
+}
+
 #container {
 	margin: 25px auto;
 	width: 650px;
