@@ -1,0 +1,22 @@
+.inline-b {
+	display: inline-block;
+	margin: 10px;
+	width: 300px;
+}
+
+.error {
+	color: red;
+}
+
+#container {
+	margin: 25px auto;
+	width: 650px;
+}
+
+	#login {
+		vertical-align: top;
+	}
+
+	.form-group {
+		margin: 15px 0;
+	}
