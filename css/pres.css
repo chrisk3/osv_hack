@@ -71,6 +71,13 @@ body {
 		margin-left: 20px;
 	}
 	.slide li {
-		font-size: 28px;
+		font-size: 24px;
 		padding: 10px;
+	}
+	.pic {
+		display: inline-block;
+		float: right;
+		height: 250px;
+		margin: 55px 55px 0 0;
+		width: 300px;
 	}
