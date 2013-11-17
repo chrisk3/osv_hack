@@ -16,7 +16,7 @@
 <body>
 	<section>
 		<div id='slide'>
-			<h1><?= $slide["title"] ?></h1>
+			<h1 class='title' id='title' data-slideid=<?= $slide['id'] ?>><?= $slide["title"] ?></h1>
 			<ul>
 				<li class='listitem' id='first' data-slideid=<?= $slide['id'] ?>><?= $slide['first'] ?></li>
 				<li class='listitem' id='second' data-slideid=<?= $slide['id'] ?>><?= $slide['second'] ?></li>

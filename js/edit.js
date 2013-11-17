@@ -12,6 +12,32 @@ $(document).ready(function() {
 		}, "json");
 	});
 
+	$('#slide').on('click', '.title', function() {
+		var item = $(this);
+		var id = item.attr('id');
+		var slideid = item.attr('data-slideid');
+		item.html('');
+
+		$.post('php/editslide.php', { id: id, slideid: slideid }, function(data) {
+			item.attr('class', 'editing');
+			item.html(data);
+			item.after("<button id='titlebutton' data-slideid=" + slideid + " data-id=" + id + ">Save</button");
+		}, "json");
+	});
+
+	$('#slide').on('click', '#titlebutton', function() {
+		var button = $(this);
+		var saveid = button.attr('data-id');
+		var saveslideid = button.attr('data-slideid');
+		var input = $("input[data-inputid=" + saveid + "]");
+		var content = input.val();
+		$.post('php/editslide.php', { saveid: saveid, saveslideid: saveslideid, content: content }, function(data) {
+			button.remove();
+			input.remove();
+			$("#slide").prepend("<h1 class='title' id='title' data-slideid=" + saveslideid + ">" + data + "</h1>");
+		});
+	});
+
 	$('#slide').on('click', 'button', function() {
 		var button = $(this);
 		var saveid = button.attr('data-id');
