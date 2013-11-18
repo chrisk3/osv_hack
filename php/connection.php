@@ -2,7 +2,7 @@
 
 class Database {
 	function __construct() {
-		$connection = mysql_connect('localhost', 'root', 'mysqlpass') or die(mysql_error());
+		$connection = mysql_connect('localhost', 'root', '') or die(mysql_error());
 		$database = mysql_select_db('mydb', $connection) or die(mysql_error());
 	}
 

@@ -35,7 +35,7 @@ if (isset($_POST['id']) && isset($_POST['slideid'])) {
 		 } else {
 	   		if (file_exists("../img/upload/" . $_FILES["file"]["name"])) {
 	      		$_SESSION['fileupload'] = $_FILES["file"]["name"] . " already exists. ";
-	      		header("Location: ../edit.php");
+	      		header("Location: ../create.php");
 	      	} else {
 		      move_uploaded_file($_FILES["file"]["tmp_name"],
 		      "../img/upload/" . $_FILES["file"]["name"]);
@@ -43,7 +43,7 @@ if (isset($_POST['id']) && isset($_POST['slideid'])) {
 
 		      $query = "UPDATE slides SET pic = '{$_FILES['file']['name']}' WHERE id = '{$_POST['id']}'";
 		      $connect->run_query($query);
-		      header("Location: ../edit.php");
+		      header("Location: ../create.php");
 		    }
 		 }
 	}

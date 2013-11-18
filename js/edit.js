@@ -51,4 +51,19 @@ $(document).ready(function() {
 			$("li[id=" + saveid + "]").attr('class', 'listitem');
 		});
 	});
+
+	$('#slidelist').on('click', '.list', function() {
+		var slideid = $(this).attr('data-slideid');
+		$('#slide').children().remove();
+		$.post('php/getslide.php', { slideid: slideid }, function(data){
+			$('#slide').html(data);
+		}, "json");
+	});
+
+	$('#add').click(function(){
+		var presentation = $(this).attr('data-presentation');
+		$.post('php/getslide.php', { presentation: presentation }, function(data) {
+			$('#slidelist').append(data);
+		}, "json");
+	});
 });

@@ -43,7 +43,7 @@ $slide = $connect->fetch_result($get_slide);
 			<?php 
 				$query = "SELECT pic FROM slides WHERE id = {$slide['id']}"; 
 				$pic = $connect->fetch_result($query);
-				echo "../img/upload/".$pic['pic'];
+				echo "img/upload/".$pic['pic'];
 			?>></div>
 		</div>
 	</section>

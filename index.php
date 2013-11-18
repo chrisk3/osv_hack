@@ -18,16 +18,16 @@
 
     require_once('connection.php');
 
-    // $id = $_GET['id'];
-    $id = 1;
+    $id = $_GET['id'];
 
 	$query_fetch_slides = "SELECT * FROM slides WHERE presentation_id = {$id}";
     $slides = fetch_all($query_fetch_slides);
     $count = 1;
+    $speed = count($slides) + 5;
 
 ?>
 
-		<div id="container" data-speed="10" data-type="background">
+		<div id="container" <?= "data-speed='" . $speed . "'" ?> data-type="background">
 <?php 
 
 	if (isset($slides))
@@ -43,7 +43,7 @@
 					</div>
 					<div class="content">
 						<h2><?= $slide['title']; ?></h2>
-						<img <?= "src='" . $slide['pic'] . "'"; ?> alt="picture" class="pic">
+						<img <?= "src='img/upload/" . $slide['pic'] . "'"; ?> alt="picture" class="pic">
 						<ul>
 <?php 					if (!empty($slide['first']))
 							echo "<li>" . $slide['first'] . "</li>";
