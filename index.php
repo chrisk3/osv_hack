@@ -27,7 +27,7 @@
 
 ?>
 
-		<div id="container" data-speed="4" data-type="background">
+		<div id="container" data-speed="10" data-type="background">
 <?php 
 
 	if (isset($slides))
@@ -45,12 +45,19 @@
 						<h2><?= $slide['title']; ?></h2>
 						<img <?= "src='" . $slide['pic'] . "'"; ?> alt="picture" class="pic">
 						<ul>
-							<li><?= $slide['first']; ?></li>
-							<li><?= $slide['second']; ?></li>
-							<li><?= $slide['third']; ?></li>
-							<li><?= $slide['fourth']; ?></li>
-							<li><?= $slide['fifth']; ?></li>
-							<li><?= $slide['sixth']; ?></li>
+<?php 					if (!empty($slide['first']))
+							echo "<li>" . $slide['first'] . "</li>";
+						if (!empty($slide['second']))
+							echo "<li>" . $slide['second'] . "</li>";
+						if (!empty($slide['third']))
+							echo "<li>" . $slide['third'] . "</li>";
+						if (!empty($slide['fourth']))
+							echo "<li>" . $slide['fourth'] . "</li>";
+						if (!empty($slide['fifth']))
+							echo "<li>" . $slide['fifth'] . "</li>";
+						if (!empty($slide['sixth']))
+							echo "<li>" . $slide['sixth'] . "</li>";
+?>
 						</ul>
 					</div>
 				</div>
